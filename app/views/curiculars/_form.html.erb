@@ -1,0 +1,27 @@
+<%= form_with(model: curicular) do |form| %>
+  <% if curicular.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(curicular.errors.count, "error") %> prohibited this curicular from being saved:</h2>
+
+      <ul>
+        <% curicular.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :activity %>
+    <%= form.text_field :activity %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

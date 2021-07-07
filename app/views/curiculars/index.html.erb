@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Curiculars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Activity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @curiculars.each do |curicular| %>
+      <tr>
+        <td><%= curicular.year %></td>
+        <td><%= curicular.activity %></td>
+        <td><%= link_to 'Show', curicular %></td>
+        <td><%= link_to 'Edit', edit_curicular_path(curicular) %></td>
+        <td><%= link_to 'Destroy', curicular, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Curicular', new_curicular_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @curicular.year %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @curicular.activity %>
+</p>
+
+<%= link_to 'Edit', edit_curicular_path(@curicular) %> |
+<%= link_to 'Back', curiculars_path %>
