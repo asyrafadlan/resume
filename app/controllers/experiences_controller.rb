@@ -13,6 +13,7 @@ class ExperiencesController < ApplicationController
   # GET /experiences/new
   def new
     @experience = Experience.new
+    @user = User.first
   end
 
   # GET /experiences/1/edit
@@ -64,6 +65,6 @@ class ExperiencesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def experience_params
-      params.require(:experience).permit(:year, :company, :designation)
+      params.require(:experience).permit(:year, :company, :designation, :user_id)
     end
 end

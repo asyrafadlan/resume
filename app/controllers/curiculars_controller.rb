@@ -13,6 +13,7 @@ class CuricularsController < ApplicationController
   # GET /curiculars/new
   def new
     @curicular = Curicular.new
+    @user = User.first
   end
 
   # GET /curiculars/1/edit
@@ -64,6 +65,6 @@ class CuricularsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def curicular_params
-      params.require(:curicular).permit(:year, :activity)
+      params.require(:curicular).permit(:year, :activity, user_id)
     end
 end

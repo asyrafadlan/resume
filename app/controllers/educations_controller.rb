@@ -4,7 +4,6 @@ class EducationsController < ApplicationController
   # GET /educations or /educations.json
   def index
     @educations = Education.all
-    @user = User.first
 
   end
 
@@ -15,6 +14,7 @@ class EducationsController < ApplicationController
   # GET /educations/new
   def new
     @education = Education.new
+    @user = User.first
   end
 
   # GET /educations/1/edit
@@ -66,6 +66,6 @@ class EducationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def education_params
-      params.require(:education).permit(:year, :institution, :achievement)
+      params.require(:education).permit(:year, :institution, :achievement, :user_id)
     end
 end
